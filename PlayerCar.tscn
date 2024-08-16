@@ -16,7 +16,7 @@ transform = Transform3D(1.16, 0, 0, 0, 1, 0, 0, 0, 4.605, 0, 0, 0)
 mesh = SubResource("BoxMesh_h51hl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.16, 0, 0, 0, 1, 0, 0, 0, 4.605, 0, 0, 0)
+transform = Transform3D(1.16, 0, 0, 0, 1, 0, 0, 0, 4.6, 0, 0, 0)
 shape = SubResource("BoxShape3D_v7lty")
 
 [node name="WheelFL" type="VehicleWheel3D" parent="."]
