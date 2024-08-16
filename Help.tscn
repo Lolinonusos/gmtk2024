@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://8o1kp53wj8ft"]
+
+[ext_resource type="PackedScene" uid="uid://byy4loel0kdj8" path="res://PlayerCar.tscn" id="1_l8s71"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tn5oc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hq0al"]
+
+[sub_resource type="Environment" id="Environment_dxla1"]
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Environment" id="Environment_hoeoy"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("BoxMesh_tn5oc")
+
+[node name="Area3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+shape = SubResource("BoxShape3D_hq0al")
+
+[node name="VehicleBody3D" parent="." instance=ExtResource("1_l8s71")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.91922, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dxla1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.436849, 0.899535, 0, -0.298124, 0.144781, 0.943483, 0.848696, -0.41216, 0.33142, 0, 18.5846, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.78055, 0, 0.625093, 0, 1, 0, -0.625093, 0, -0.78055, 3.8427, 4.71435, -3.97653)
+environment = SubResource("Environment_hoeoy")
