@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjuhm8lyb50nq"]
+
+[ext_resource type="PackedScene" uid="uid://cw3pc7sgiidn3" path="res://3d Models/Capybara_Collectible.fbx" id="1_7eo3w"]
+
+[node name="Capybara_Collectible" instance=ExtResource("1_7eo3w")]
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "Capybara|Spiin"

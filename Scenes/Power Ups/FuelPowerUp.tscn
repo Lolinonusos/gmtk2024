@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://t1k3xe0a0ccs"]
+
+[ext_resource type="PackedScene" uid="uid://bjuhm8lyb50nq" path="res://Scenes/Power Ups/capybara_collectible.tscn" id="2_26008"]
+[ext_resource type="Script" path="res://Scripts/FuelPowerUp.gd" id="2_yymku"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vq6wl"]
+
+[node name="FuelPowerUp" type="Node3D"]
+script = ExtResource("2_yymku")
+
+[node name="Capybara_Collectible" parent="." instance=ExtResource("2_26008")]
+transform = Transform3D(2.69, 0, 0, 0, 2.69, 0, 0, 0, 2.69, 0, -0.530153, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_vq6wl")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

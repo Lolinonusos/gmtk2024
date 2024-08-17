@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://8o1kp53wj8ft"]
+[gd_scene load_steps=10 format=3 uid="uid://8o1kp53wj8ft"]
 
 [ext_resource type="PackedScene" uid="uid://byy4loel0kdj8" path="res://Scenes/PlayerCar.tscn" id="1_7jcgb"]
 [ext_resource type="Texture2D" uid="uid://ccpopgo8e3qq8" path="res://placeholderGround.tres" id="1_hn3dd"]
 [ext_resource type="Script" path="res://Scripts/CarCam.gd" id="2_nra01"]
 [ext_resource type="PackedScene" uid="uid://cm7m77nsis0vc" path="res://Scenes/UI.tscn" id="4_lw3e5"]
+[ext_resource type="PackedScene" uid="uid://t1k3xe0a0ccs" path="res://Scenes/Power Ups/FuelPowerUp.tscn" id="5_25qeo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fa8o"]
 albedo_texture = ExtResource("1_hn3dd")
@@ -45,3 +46,12 @@ script = ExtResource("2_nra01")
 target_path = NodePath("../Player")
 
 [node name="Ui" parent="." instance=ExtResource("4_lw3e5")]
+
+[node name="FuelPowerUp" parent="." instance=ExtResource("5_25qeo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16986, 1.73839, 11.9096)
+
+[node name="FuelPowerUp2" parent="." instance=ExtResource("5_25qeo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.772108, 0.5, 16.6043)
+
+[node name="FuelPowerUp3" parent="." instance=ExtResource("5_25qeo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32873, 1.73839, 14.7178)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://byy4loel0kdj8"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerCar.gd" id="1_vyyvc"]
-[ext_resource type="PackedScene" uid="uid://m6dtgwrb3low" path="res://Scenes/FuelComponent.tscn" id="2_j1yhs"]
+[ext_resource type="PackedScene" uid="uid://m6dtgwrb3low" path="res://Scenes/Components/FuelComponent.tscn" id="2_j1yhs"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_h51hl"]
 
