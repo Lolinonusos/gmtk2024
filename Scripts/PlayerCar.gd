@@ -9,8 +9,8 @@ func _ready():
 	pass # Replace with function body.
 
 func _physics_process(delta):
-	steering = lerp(steering, Input.get_axis("ui_right", "ui_left") * 0.4, 5 * delta)
-	engine_force = Input.get_axis("ui_down", "ui_up") * 100
+	steering = lerp(steering, Input.get_axis("RIGHT", "LEFT") * 0.4, 5 * delta)
+	engine_force = Input.get_axis("DOWN", "UP") * 100
 
 func _unhandled_input(event):
 	# Close game
