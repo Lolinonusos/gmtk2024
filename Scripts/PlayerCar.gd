@@ -18,6 +18,8 @@ func _physics_process(delta):
 		fuelComp.Fuel(fuelUsage, false)
 	
 	engine_force = drive * 100
+	
+	#print(linear_velocity)
 
 func _unhandled_input(event):
 	# Close game

@@ -4,7 +4,6 @@ class_name FuelComponent
 ## Public Variables
 @export var MAX_FUEL := 100.0
 
-
 ## Private Variables
 var fuel : float
 
@@ -22,3 +21,4 @@ func Fuel(amount:float, add : bool):
 	elif fuel > MAX_FUEL:
 		fuel = MAX_FUEL
 	
+	#print(fuel)
