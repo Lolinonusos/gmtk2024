@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://8o1kp53wj8ft"]
+[gd_scene load_steps=11 format=3 uid="uid://8o1kp53wj8ft"]
 
 [ext_resource type="PackedScene" uid="uid://byy4loel0kdj8" path="res://Scenes/PlayerCar.tscn" id="1_7jcgb"]
-[ext_resource type="Texture2D" uid="uid://ccpopgo8e3qq8" path="res://placeholderGround.tres" id="1_hn3dd"]
+[ext_resource type="Texture2D" uid="uid://ccpopgo8e3qq8" path="res://Textures/placeholderGround.tres" id="1_hn3dd"]
 [ext_resource type="Script" path="res://Scripts/CarCam.gd" id="2_nra01"]
 [ext_resource type="PackedScene" uid="uid://cm7m77nsis0vc" path="res://Scenes/UI.tscn" id="4_lw3e5"]
 [ext_resource type="PackedScene" uid="uid://t1k3xe0a0ccs" path="res://Scenes/Power Ups/FuelPowerUp.tscn" id="5_25qeo"]
+[ext_resource type="PackedScene" uid="uid://eptgu770v3w7" path="res://Scenes/Power Ups/EightBallPowerUp.tscn" id="6_4lbcx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fa8o"]
 albedo_texture = ExtResource("1_hn3dd")
@@ -55,3 +56,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.772108, 0.5, 16.6043)
 
 [node name="FuelPowerUp3" parent="." instance=ExtResource("5_25qeo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32873, 1.73839, 14.7178)
+
+[node name="EightBallPowerUp" parent="." instance=ExtResource("6_4lbcx")]
+transform = Transform3D(0.776079, 0, 0.630635, 0, 1, 0, -0.630635, 0, 0.776079, 2.69857, 2.09667, 12.7037)

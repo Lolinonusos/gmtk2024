@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://eptgu770v3w7"]
+
+[ext_resource type="Script" path="res://Scripts/EightBallPowerUp.gd" id="1_gcobj"]
+[ext_resource type="Texture2D" uid="uid://nu8aahu315yk" path="res://Textures/8b.png" id="1_rwpb2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjtwu"]
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 0.39
+
+[sub_resource type="SphereMesh" id="SphereMesh_fg3sr"]
+material = SubResource("StandardMaterial3D_xjtwu")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2pnea"]
+size = Vector3(1, 2.12988, 1)
+
+[node name="EightBallPowerUp" type="Node3D"]
+script = ExtResource("1_gcobj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+mesh = SubResource("SphereMesh_fg3sr")
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(-0.997389, 4.4927e-08, 0.123454, -0.0897175, 0.690357, -0.724833, -0.0848031, -0.730364, -0.685129, 0, 0, 0)
+layers = 2
+texture_albedo = ExtResource("1_rwpb2")
+cull_mask = 1048574
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00927734, 0)
+shape = SubResource("BoxShape3D_2pnea")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
