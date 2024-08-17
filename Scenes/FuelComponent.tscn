@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://m6dtgwrb3low"]
+
+[ext_resource type="Script" path="res://Scripts/fuel_component.gd" id="1_3yo1e"]
+
+[node name="FuelComponent" type="Node2D"]
+script = ExtResource("1_3yo1e")

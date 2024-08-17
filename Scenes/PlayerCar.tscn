@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://byy4loel0kdj8"]
+[gd_scene load_steps=6 format=3 uid="uid://byy4loel0kdj8"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerCar.gd" id="1_vyyvc"]
+[ext_resource type="PackedScene" uid="uid://m6dtgwrb3low" path="res://Scenes/FuelComponent.tscn" id="2_j1yhs"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_h51hl"]
 
@@ -9,8 +10,11 @@ size = Vector3(1.16, 1, 4.6)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_dbv54"]
 
-[node name="VehicleBody3D" type="VehicleBody3D"]
+[node name="VehicleBody3D" type="VehicleBody3D" groups=["player"]]
 script = ExtResource("1_vyyvc")
+
+[node name="FuelComponent" parent="." instance=ExtResource("2_j1yhs")]
+MAX_FUEL = 1000.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.16, 0, 0, 0, 1, 0, 0, 0, 4.605, 0, 0, 0)

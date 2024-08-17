@@ -1,9 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://8o1kp53wj8ft"]
+[gd_scene load_steps=9 format=3 uid="uid://8o1kp53wj8ft"]
 
 [ext_resource type="PackedScene" uid="uid://byy4loel0kdj8" path="res://Scenes/PlayerCar.tscn" id="1_7jcgb"]
+[ext_resource type="Texture2D" uid="uid://ccpopgo8e3qq8" path="res://placeholderGround.tres" id="1_hn3dd"]
 [ext_resource type="Script" path="res://Scripts/CarCam.gd" id="2_nra01"]
+[ext_resource type="PackedScene" uid="uid://cm7m77nsis0vc" path="res://Scenes/UI.tscn" id="4_lw3e5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fa8o"]
+albedo_texture = ExtResource("1_hn3dd")
 
 [sub_resource type="BoxMesh" id="BoxMesh_tn5oc"]
+material = SubResource("StandardMaterial3D_3fa8o")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hq0al"]
 
@@ -22,9 +28,10 @@ mesh = SubResource("BoxMesh_tn5oc")
 shape = SubResource("BoxShape3D_hq0al")
 
 [node name="Player" parent="." instance=ExtResource("1_7jcgb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.91922, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38184, 0)
 axis_lock_angular_x = true
 axis_lock_angular_z = true
+fuelUsage = 1.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dxla1")
@@ -36,3 +43,5 @@ transform = Transform3D(0.436849, 0.899535, 0, -0.298124, 0.144781, 0.943483, 0.
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 4.714, -3.977)
 script = ExtResource("2_nra01")
 target_path = NodePath("../Player")
+
+[node name="Ui" parent="." instance=ExtResource("4_lw3e5")]
