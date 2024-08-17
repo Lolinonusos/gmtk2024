@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://8o1kp53wj8ft"]
 
-[ext_resource type="PackedScene" uid="uid://byy4loel0kdj8" path="res://PlayerCar.tscn" id="1_l8s71"]
-[ext_resource type="Script" path="res://CarCam.gd" id="2_la2l6"]
+[ext_resource type="PackedScene" uid="uid://byy4loel0kdj8" path="res://Scenes/PlayerCar.tscn" id="1_51by8"]
+[ext_resource type="Script" path="res://Scripts/CarCam.gd" id="2_x4kjx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tn5oc"]
 
@@ -21,8 +21,10 @@ mesh = SubResource("BoxMesh_tn5oc")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
 shape = SubResource("BoxShape3D_hq0al")
 
-[node name="VehicleBody3D" parent="." instance=ExtResource("1_l8s71")]
+[node name="Player" parent="." instance=ExtResource("1_51by8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.91922, 0)
+axis_lock_angular_x = true
+axis_lock_angular_z = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dxla1")
@@ -32,5 +34,5 @@ transform = Transform3D(0.436849, 0.899535, 0, -0.298124, 0.144781, 0.943483, 0.
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 4.714, -3.977)
-script = ExtResource("2_la2l6")
-target_path = NodePath("../VehicleBody3D")
+script = ExtResource("2_x4kjx")
+target_path = NodePath("../Player")
