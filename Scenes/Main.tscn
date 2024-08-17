@@ -19,7 +19,7 @@ ambient_light_color = Color(1, 1, 1, 1)
 [node name="Node3D" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
+transform = Transform3D(1000, 0, 0, 0, 1, 0, 0, 0, 1000, 0, 0, 0)
 mesh = SubResource("BoxMesh_tn5oc")
 
 [node name="Area3D" type="StaticBody3D" parent="MeshInstance3D"]
