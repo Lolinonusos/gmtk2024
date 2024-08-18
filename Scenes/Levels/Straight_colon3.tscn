@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ccpopgo8e3qq8" path="res://Textures/placeholderGround.tres" id="1_gocfq"]
 [ext_resource type="PackedScene" uid="uid://byy4loel0kdj8" path="res://Scenes/PlayerCar.tscn" id="2_dnawu"]
 [ext_resource type="Script" path="res://Scripts/CarCam.gd" id="3_5urv8"]
-[ext_resource type="PackedScene" uid="uid://bh5jhbw3rgerh" path="res://Scenes/Power Ups/SizePowerUp.tscn" id="4_imu3v"]
+[ext_resource type="PackedScene" uid="uid://bh5jhbw3rgerh" path="res://Scenes/Power Ups/Size/SizePowerUp.tscn" id="4_imu3v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fa8o"]
 albedo_texture = ExtResource("1_gocfq")
