@@ -20,6 +20,7 @@ func hit():
 	health -= player.damage_dealt
 	
 	if health <= 0:
+		ParticleManager.instantiate_particle("res://Scenes/VFX/Explosion.tscn", self.global_position)
 		queue_free()
 	print(health)
 

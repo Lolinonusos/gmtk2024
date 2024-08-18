@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://dtb58nywml4fh"]
+
+[ext_resource type="Texture2D" uid="uid://chktoj5i7mh1i" path="res://Textures/explosion1_0022.png" id="1_ul4dj"]
+
+[sub_resource type="Curve" id="Curve_fgfv2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.514991, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_162ip"]
+texture_mode = 1
+curve = SubResource("Curve_fgfv2")
+
+[sub_resource type="Curve" id="Curve_xo7ll"]
+max_value = 142.73
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.305115, 111.545), 165.87, 165.87, 0, 0, Vector2(1, 142.73), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_bavhr"]
+curve = SubResource("Curve_xo7ll")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u17tm"]
+particle_flag_rotate_y = true
+angle_min = 1.07288e-05
+angle_max = 360.0
+scale_curve = SubResource("CurveTexture_bavhr")
+alpha_curve = SubResource("CurveTexture_162ip")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_je4dp"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_ul4dj")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_t36ub"]
+material = SubResource("StandardMaterial3D_je4dp")
+
+[sub_resource type="Animation" id="Animation_x7sjt"]
+resource_name = "particle"
+length = 3.0165
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ywx3h"]
+_data = {
+"particle": SubResource("Animation_x7sjt")
+}
+
+[node name="Explosion" type="GPUParticles3D"]
+amount = 1
+collision_base_size = 70.35
+process_material = SubResource("ParticleProcessMaterial_u17tm")
+draw_pass_1 = SubResource("QuadMesh_t36ub")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ywx3h")
+}
+autoplay = "particle"
