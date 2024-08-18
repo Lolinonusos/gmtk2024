@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b6brvtqmo61w3"
+path="res://.godot/imported/Dumpy Colbox.obj-eddd14604fec748eedb6ca1b7897009b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Dumpy Colbox.obj-eddd14604fec748eedb6ca1b7897009b.mesh"]
+
+source_file="res://3d Models/Dumpy Colbox.obj"
+dest_files=["res://.godot/imported/Dumpy Colbox.obj-eddd14604fec748eedb6ca1b7897009b.mesh", "res://.godot/imported/Dumpy Colbox.obj-eddd14604fec748eedb6ca1b7897009b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -10,6 +10,7 @@ var speedMult := 1.0
 var boostTime := 0.0
 
 var powerMulti := 1.0
+var scaleUpPickedUp := 0
 
 #var max_rpm = 500
 #var max_torque = 200
@@ -61,7 +62,14 @@ func Boost(boostMulti : float, boostDuration : float):
 func SizeUp(sizeUpValue:float):
 	var upsize = sizeUpValue * 0.01
 	
+	## Scale entire thing more to match scaling with wheels
+	$Dumpy.scale += Vector3(upsize*2, upsize*2, upsize*2)
 	scale += Vector3(upsize, upsize, upsize)
 	
+	## Count scale up pickups picked up, might use for camera to zoom out slightly when the car gets bigger
+	scaleUpPickedUp += 1
+	print(scaleUpPickedUp, " upscales has been picked up")
+	
 	powerMulti += upsize
+	
 	print(powerMulti)
