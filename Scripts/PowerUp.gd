@@ -1,14 +1,24 @@
 extends Node3D
 class_name PowerUp
 
-# Reference to the player
+## Reference to the player
 var player : PlayerCar = null
 
 @onready var label : Label3D = $Label3D
-#@onready var label : Label = $Label
+ 
 ## Most powerups will add or multiply something onto the player,
 ## see if this one can be used before adding more variable
 @export var boost : float = 100.0
+
+## Boost should be between min and max size
+## These are used to determine the powerups size
+## The closer Boost is to min_size the smaller it will be
+## Closer to max_size means bigger
+@export var min_size : float = 50
+@export var max_size : float = 200
+
+## Mesh is scaled with boost
+@onready var mesh : Node3D = $Mesh
 
 # Floating up and down animation
 var bouncetime : float
@@ -23,7 +33,15 @@ func _ready():
 		label.set_text("+%d" %boost)
 	else:
 		label.set_text("-%d" %boost)
-		
+	
+	var y : float = inverse_lerp(min_size, max_size, boost) + 1 * 2
+	
+	
+	
+	#print(y)
+	
+	mesh.global_scale(Vector3(y,y,y))
+	
 	return
 
 func _process(delta: float) -> void:

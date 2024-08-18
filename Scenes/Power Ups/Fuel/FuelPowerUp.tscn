@@ -8,10 +8,9 @@ size = Vector3(1, 1.80823, 1)
 
 [node name="FuelPowerUp" type="Node3D"]
 script = ExtResource("2_yymku")
-fuel_boost = null
-boost = null
+min_size = 100.0
 
-[node name="Capybara_Collectible" parent="." instance=ExtResource("2_26008")]
+[node name="Mesh" parent="." instance=ExtResource("2_26008")]
 transform = Transform3D(2.69, 0, 0, 0, 2.69, 0, 0, 0, 2.69, 0, -0.530153, 0)
 
 [node name="Area3D" type="Area3D" parent="."]

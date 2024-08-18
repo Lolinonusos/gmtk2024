@@ -44,18 +44,20 @@ transform = Transform3D(0.436849, 0.899535, 0, -0.298124, 0.144781, 0.943483, 0.
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 4.714, -3.977)
 script = ExtResource("2_nra01")
-target_path = NodePath("../Player")
 
 [node name="Ui" parent="." instance=ExtResource("4_lw3e5")]
 
 [node name="FuelPowerUp" parent="." instance=ExtResource("5_25qeo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16986, 1.73839, 11.9096)
+boost = 100.0
 
 [node name="FuelPowerUp2" parent="." instance=ExtResource("5_25qeo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.772108, 0.5, 16.6043)
+boost = 100.0
 
 [node name="FuelPowerUp3" parent="." instance=ExtResource("5_25qeo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32873, 1.73839, 14.7178)
+boost = 100.0
 
 [node name="EightBallPowerUp" parent="." instance=ExtResource("6_4lbcx")]
 transform = Transform3D(0.776079, 0, 0.630635, 0, 1, 0, -0.630635, 0, 0.776079, 2.69857, 2.09667, 12.7037)

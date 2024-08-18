@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://do7rjlpoe2qfp"]
+[gd_scene load_steps=5 format=3 uid="uid://do7rjlpoe2qfp"]
 
 [ext_resource type="Script" path="res://Scenes/Obstacle.gd" id="1_jvejl"]
 [ext_resource type="PackedScene" uid="uid://bjuhm8lyb50nq" path="res://Scenes/Power Ups/Fuel/capybara_collectible.tscn" id="2_g2nw5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vidys"]
 size = Vector3(7.69382, 5.3623, 3.90479)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3jc8j"]
+size = Vector3(9.75659, 6.36804, 5.99957)
 
 [node name="Obstacle" type="Node3D"]
 script = ExtResource("1_jvejl")
@@ -21,7 +24,7 @@ shape = SubResource("BoxShape3D_vidys")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.60826, 1.10995)
-shape = SubResource("BoxShape3D_vidys")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.433, 2.684, 0)
+shape = SubResource("BoxShape3D_3jc8j")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

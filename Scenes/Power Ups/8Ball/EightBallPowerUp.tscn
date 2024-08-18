@@ -15,13 +15,14 @@ size = Vector3(1, 2.12988, 1)
 
 [node name="EightBallPowerUp" type="Node3D"]
 script = ExtResource("1_gcobj")
+max_size = 150.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="."]
 layers = 2
 mesh = SubResource("SphereMesh_fg3sr")
 
-[node name="Decal" type="Decal" parent="."]
-transform = Transform3D(-0.997389, 4.4927e-08, 0.123454, -0.0897175, 0.690357, -0.724833, -0.0848031, -0.730364, -0.685129, 0, 0, 0)
+[node name="Decal" type="Decal" parent="Mesh"]
+transform = Transform3D(-0.992427, -4.47035e-08, 0.122839, -0.0892711, 0.686923, -0.721227, -0.0843811, -0.726731, -0.68172, 0, 0, 0)
 layers = 2
 texture_albedo = ExtResource("1_rwpb2")
 cull_mask = 1048574
