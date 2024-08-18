@@ -13,7 +13,7 @@ min_size = 0.5
 max_size = 1.0
 
 [node name="Mesh" parent="." instance=ExtResource("2_fwari")]
-transform = Transform3D(0.0777871, -0.0457681, 0.0430633, 0.0400958, 0.0889116, 0.0220692, -0.0483889, 9.95949e-05, 0.0875129, 0, 0, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="."]
 
