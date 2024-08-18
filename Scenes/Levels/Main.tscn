@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://8o1kp53wj8ft"]
+[gd_scene load_steps=12 format=3 uid="uid://8o1kp53wj8ft"]
 
 [ext_resource type="PackedScene" uid="uid://byy4loel0kdj8" path="res://Scenes/PlayerCar.tscn" id="1_7jcgb"]
 [ext_resource type="Texture2D" uid="uid://ccpopgo8e3qq8" path="res://Textures/placeholderGround.tres" id="1_hn3dd"]
@@ -6,12 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://cm7m77nsis0vc" path="res://Scenes/UI.tscn" id="4_lw3e5"]
 [ext_resource type="PackedScene" uid="uid://t1k3xe0a0ccs" path="res://Scenes/Power Ups/FuelPowerUp.tscn" id="5_25qeo"]
 [ext_resource type="PackedScene" uid="uid://eptgu770v3w7" path="res://Scenes/Power Ups/EightBallPowerUp.tscn" id="6_4lbcx"]
+[ext_resource type="PackedScene" uid="uid://bh5jhbw3rgerh" path="res://Scenes/Power Ups/SizePowerUp.tscn" id="7_us3iy"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fa8o"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7epo1"]
 albedo_texture = ExtResource("1_hn3dd")
 
 [sub_resource type="BoxMesh" id="BoxMesh_tn5oc"]
-material = SubResource("StandardMaterial3D_3fa8o")
+material = SubResource("StandardMaterial3D_7epo1")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hq0al"]
 
@@ -31,8 +32,6 @@ shape = SubResource("BoxShape3D_hq0al")
 
 [node name="Player" parent="." instance=ExtResource("1_7jcgb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38184, 0)
-axis_lock_angular_x = true
-axis_lock_angular_z = true
 fuelUsage = 1.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -59,3 +58,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32873, 1.73839, 14.7178)
 
 [node name="EightBallPowerUp" parent="." instance=ExtResource("6_4lbcx")]
 transform = Transform3D(0.776079, 0, 0.630635, 0, 1, 0, -0.630635, 0, 0.776079, 2.69857, 2.09667, 12.7037)
+
+[node name="SizePowerUp" parent="." instance=ExtResource("7_us3iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.458899, 0.711029, 8.33382)

@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://c6wygagvbxghk"]
+
+[ext_resource type="Material" uid="uid://ghffsbrforcf" path="res://materials/mat_red.tres" id="1_5m7w4"]
+[ext_resource type="Material" uid="uid://baltlgxd6rgeg" path="res://materials/mat_blue.tres" id="2_2qcn6"]
+[ext_resource type="Material" uid="uid://8e7l61sp4xyd" path="res://materials/mat_green.tres" id="3_gotuf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3jqub"]
+material = ExtResource("1_5m7w4")
+
+[sub_resource type="PrismMesh" id="PrismMesh_g4kj0"]
+material = ExtResource("1_5m7w4")
+
+[sub_resource type="BoxMesh" id="BoxMesh_mf3od"]
+material = ExtResource("2_2qcn6")
+
+[sub_resource type="PrismMesh" id="PrismMesh_orhyl"]
+material = ExtResource("2_2qcn6")
+
+[sub_resource type="BoxMesh" id="BoxMesh_hh1iy"]
+material = ExtResource("3_gotuf")
+
+[sub_resource type="PrismMesh" id="PrismMesh_jn3lo"]
+material = ExtResource("3_gotuf")
+
+[node name="SizeCollectible" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0)
+mesh = SubResource("BoxMesh_3jqub")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(-2.91409e-09, 0.0666667, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.533333, -2.18557e-08, 0)
+mesh = SubResource("PrismMesh_g4kj0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.11959e-07, 0, -1, 0, 1, 0, 14, 0, -4.37114e-08, 0.5, 0, 7.5)
+mesh = SubResource("BoxMesh_mf3od")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="MeshInstance3D2"]
+transform = Transform3D(-2.91409e-09, 0.0666667, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.533333, -2.18557e-08, 0)
+mesh = SubResource("PrismMesh_orhyl")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, 4.37114e-08, -1, 14, -4.37114e-08, 0, -6.11959e-07, -1, -4.37114e-08, 0.5, 7.5, 0)
+mesh = SubResource("BoxMesh_hh1iy")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="MeshInstance3D3"]
+transform = Transform3D(-2.91409e-09, 0.0666667, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.533333, -2.18557e-08, 0)
+mesh = SubResource("PrismMesh_jn3lo")

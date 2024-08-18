@@ -4,4 +4,4 @@ extends PowerUp
 @export var boost_time := 5
 
 func effect():
-	player.boost(speed_boost, boost_time)
+	player.Boost(speed_boost, boost_time)

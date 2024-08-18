@@ -9,6 +9,8 @@ var fuelComp : FuelComponent
 var speedMult := 1.0
 var boostTime := 0.0
 
+var powerMulti := 1.0
+
 #var max_rpm = 500
 #var max_torque = 200
 
@@ -34,7 +36,7 @@ func _physics_process(delta):
 	
 	
 	
-	damage_dealt = base_damage * (linear_velocity.length() * 0.1)
+	damage_dealt = (base_damage * (linear_velocity.length() * 0.1)) * powerMulti
 	#print(damage_dealt) 
 	
 	 
@@ -52,7 +54,14 @@ func _unhandled_input(event):
 		get_tree().quit()
 	
 
-func boost(boostMulti : float, boostDuration : float):
+func Boost(boostMulti : float, boostDuration : float):
 	speedMult = boostMulti
 	boostTime += boostDuration
+
+func SizeUp(sizeUpValue:float):
+	var upsize = sizeUpValue * 0.01
 	
+	scale += Vector3(upsize, upsize, upsize)
+	
+	powerMulti += upsize
+	print(powerMulti)

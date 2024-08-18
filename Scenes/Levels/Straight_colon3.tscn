@@ -1,0 +1,143 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2gkqyu4beenq"]
+
+[ext_resource type="Texture2D" uid="uid://ccpopgo8e3qq8" path="res://Textures/placeholderGround.tres" id="1_gocfq"]
+[ext_resource type="PackedScene" uid="uid://byy4loel0kdj8" path="res://Scenes/PlayerCar.tscn" id="2_dnawu"]
+[ext_resource type="Script" path="res://Scripts/CarCam.gd" id="3_5urv8"]
+[ext_resource type="PackedScene" uid="uid://bh5jhbw3rgerh" path="res://Scenes/Power Ups/SizePowerUp.tscn" id="4_imu3v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fa8o"]
+albedo_texture = ExtResource("1_gocfq")
+
+[sub_resource type="BoxMesh" id="BoxMesh_f5j2h"]
+material = SubResource("StandardMaterial3D_3fa8o")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oaesy"]
+
+[node name="StraightColon3" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(300, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("BoxMesh_f5j2h")
+
+[node name="Area3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+shape = SubResource("BoxShape3D_oaesy")
+
+[node name="VehicleBody3D" parent="." instance=ExtResource("2_dnawu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -145.317, 1.73998, -0.0440732)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+script = ExtResource("3_5urv8")
+target_path = NodePath("../VehicleBody3D")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.935297, -0.264802, 0.234733, 0.0417082, 0.741211, 0.669975, -0.351397, -0.616835, 0.704297, 0, 32.2135, 0)
+
+[node name="SizePowerUp" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.949, 1.8457, -0.553967)
+
+[node name="SizePowerUp2" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.9494, 1.8457, -0.553967)
+
+[node name="SizePowerUp3" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.9494, 1.8457, -0.553967)
+
+[node name="SizePowerUp4" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.9494, 1.8457, -0.553967)
+
+[node name="SizePowerUp5" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.9494, 1.8457, -0.553967)
+
+[node name="SizePowerUp6" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.9494, 1.8457, -0.553967)
+
+[node name="SizePowerUp7" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.9494, 1.8457, -0.553967)
+
+[node name="SizePowerUp8" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.9494, 1.8457, -0.553967)
+
+[node name="SizePowerUp9" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.9494, 1.8457, -0.553967)
+
+[node name="SizePowerUp10" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.9494, 1.8457, -0.553967)
+
+[node name="SizePowerUp11" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.9494, 1.8457, -0.553967)
+
+[node name="SizePowerUp12" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.9494, 1.8457, -0.553967)
+
+[node name="SizePowerUp13" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.9494, 1.8457, -0.553967)
+
+[node name="SizePowerUp14" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.9494, 1.8457, -0.553967)
+
+[node name="SizePowerUp15" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9494, 1.8457, -0.553967)
+
+[node name="SizePowerUp16" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9494, 1.8457, -0.553967)
+
+[node name="SizePowerUp17" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.94942, 1.8457, -0.553967)
+
+[node name="SizePowerUp18" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05058, 1.8457, -0.553967)
+
+[node name="SizePowerUp19" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.05058, 1.8457, -0.553967)
+
+[node name="SizePowerUp20" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0506, 1.8457, -0.553967)
+
+[node name="SizePowerUp21" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0506, 1.8457, -0.553967)
+
+[node name="SizePowerUp22" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.0506, 1.8457, -0.553967)
+
+[node name="SizePowerUp23" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.0506, 1.8457, -0.553967)
+
+[node name="SizePowerUp24" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.0506, 1.8457, -0.553967)
+
+[node name="SizePowerUp25" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0506, 1.8457, -0.553967)
+
+[node name="SizePowerUp26" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.0506, 1.8457, -0.553967)
+
+[node name="SizePowerUp27" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.0506, 1.8457, -0.553967)
+
+[node name="SizePowerUp28" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.0506, 1.8457, -0.553967)
+
+[node name="SizePowerUp29" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.0506, 1.8457, -0.553967)
+
+[node name="SizePowerUp30" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.0506, 1.8457, -0.553967)
+
+[node name="SizePowerUp31" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.0506, 1.8457, -0.553967)
+
+[node name="SizePowerUp32" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.0506, 1.8457, -0.553967)
+
+[node name="SizePowerUp33" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.0506, 1.8457, -0.553967)
+
+[node name="SizePowerUp34" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.0506, 1.8457, -0.553967)
+
+[node name="SizePowerUp35" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105.051, 1.8457, -0.553967)
+
+[node name="SizePowerUp36" parent="." instance=ExtResource("4_imu3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.051, 1.8457, -0.553967)

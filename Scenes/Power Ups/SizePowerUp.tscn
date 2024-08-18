@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bh5jhbw3rgerh"]
+
+[ext_resource type="Script" path="res://Scripts/SizePowerUp.gd" id="1_oh72y"]
+[ext_resource type="PackedScene" uid="uid://c6wygagvbxghk" path="res://Scenes/Power Ups/SizeCollectible.tscn" id="2_fwari"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rv81f"]
+size = Vector3(1, 3.09479, 1)
+
+[node name="SizePowerUp" type="Node3D"]
+script = ExtResource("1_oh72y")
+sizeUp = 5.0
+
+[node name="SizeCollectible" parent="." instance=ExtResource("2_fwari")]
+transform = Transform3D(0.0777871, -0.0457681, 0.0430633, 0.0400958, 0.0889116, 0.0220692, -0.0483889, 9.95949e-05, 0.0875129, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.130463, 0)
+shape = SubResource("BoxShape3D_rv81f")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
