@@ -22,8 +22,10 @@ albedo_texture = ExtResource("4_a8orj")
 albedo_texture = ExtResource("4_a8orj")
 
 [node name="VehicleBody3D" type="VehicleBody3D" groups=["player"]]
-axis_lock_angular_x = true
-axis_lock_angular_z = true
+rotation_order = 3
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, 0.4, 0)
+inertia = Vector3(55, 0, 350)
 script = ExtResource("1_vyyvc")
 
 [node name="FuelComponent" parent="." instance=ExtResource("2_j1yhs")]

@@ -1,6 +1,7 @@
 extends VehicleBody3D
 class_name PlayerCar
 
+@export var SPEED := 100
 @export var fuelUsage := 0.1
 @export var base_damage : float = 10.0
 
@@ -8,6 +9,7 @@ var damage_dealt : float = 0.0
 var fuelComp : FuelComponent
 var speedMult := 1.0
 var boostTime := 0.0
+var originalinertia 
 
 var powerMulti := 1.0
 var scaleUpPickedUp := 0
@@ -18,15 +20,21 @@ var scaleUpPickedUp := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	originalinertia = inertia
 	fuelComp = $FuelComponent
+	
 
 func _physics_process(delta):
+	
+	rotation_degrees.z = clamp(rotation_degrees.z, -5,5)
+	rotation_degrees.x = clamp(rotation_degrees.x, -45,45)
+	
 	steering = lerp(steering, Input.get_axis("RIGHT", "LEFT") * 0.4, 5 * delta)
 	var drive = Input.get_axis("DOWN", "UP")
 	if engine_force:
 		fuelComp.Fuel(fuelUsage, false)
 	
-	engine_force = (drive * 100) * speedMult
+	engine_force = (drive * SPEED) * speedMult
 	if Input.is_action_pressed("BOOST") and fuelComp.fuel > 0.0 and drive:
 		engine_force = engine_force * 1.5
 		fuelComp.Fuel(fuelUsage, false)
@@ -34,7 +42,6 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("BOOST") and !fuelComp.fuel:
 		print("No fuel x3")
 	#print(engine_force) 
-	
 	
 	
 	damage_dealt = (base_damage * (linear_velocity.length() * 0.1)) * powerMulti
@@ -45,8 +52,11 @@ func _physics_process(delta):
 	
 	if boostTime > 0:
 		boostTime -= delta
+		rotation_degrees.x = clamp(rotation_degrees.x, -20,20)
+		rotation_degrees.y = clamp(rotation_degrees.y, -40,40)
 	else:
 		speedMult = 1
+		inertia = originalinertia
 
 func _unhandled_input(event):
 	# Close game
@@ -56,6 +66,8 @@ func _unhandled_input(event):
 	
 
 func Boost(boostMulti : float, boostDuration : float):
+	inertia = Vector3(110, 1500, 500)
+	
 	speedMult = boostMulti
 	boostTime += boostDuration
 
