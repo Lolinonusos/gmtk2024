@@ -66,7 +66,7 @@ func SizeUp(sizeUpValue:float):
 	$Dumpy.scale += Vector3(upsize*2, upsize*2, upsize*2)
 	scale += Vector3(upsize, upsize, upsize)
 	
-	## Count scale up pickups picked up, might use for camera to zoom out slightly when the car gets bigger
+	## Count scale up pickups picked up, might use for camera to zoom out slightly when the car gets bigger idk
 	scaleUpPickedUp += 1
 	print(scaleUpPickedUp, " upscales has been picked up")
 	

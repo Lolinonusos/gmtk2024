@@ -1,19 +1,17 @@
 [gd_scene load_steps=13 format=3 uid="uid://8o1kp53wj8ft"]
 
 [ext_resource type="PackedScene" uid="uid://byy4loel0kdj8" path="res://Scenes/PlayerCar.tscn" id="1_7jcgb"]
-[ext_resource type="Texture2D" uid="uid://ccpopgo8e3qq8" path="res://Textures/placeholderGround.tres" id="1_hn3dd"]
 [ext_resource type="Script" path="res://Scripts/CarCam.gd" id="2_nra01"]
 [ext_resource type="PackedScene" uid="uid://cm7m77nsis0vc" path="res://Scenes/UI.tscn" id="4_lw3e5"]
 [ext_resource type="PackedScene" uid="uid://t1k3xe0a0ccs" path="res://Scenes/Power Ups/Fuel/FuelPowerUp.tscn" id="5_25qeo"]
 [ext_resource type="PackedScene" uid="uid://eptgu770v3w7" path="res://Scenes/Power Ups/8Ball/EightBallPowerUp.tscn" id="6_4lbcx"]
 [ext_resource type="PackedScene" uid="uid://bh5jhbw3rgerh" path="res://Scenes/Power Ups/Size/SizePowerUp.tscn" id="7_us3iy"]
+[ext_resource type="Texture2D" uid="uid://dtflasxumhaeb" path="res://Textures/main.png" id="8_gkbq6"]
 [ext_resource type="PackedScene" uid="uid://do7rjlpoe2qfp" path="res://Scenes/LearnToFly2Obstacle.tscn" id="8_qsf81"]
+[ext_resource type="ArrayMesh" uid="uid://c5ciytqljorts" path="res://3d Models/Level.obj" id="9_3mk07"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7epo1"]
-albedo_texture = ExtResource("1_hn3dd")
-
-[sub_resource type="BoxMesh" id="BoxMesh_tn5oc"]
-material = SubResource("StandardMaterial3D_7epo1")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mplag"]
+albedo_texture = ExtResource("8_gkbq6")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hq0al"]
 
@@ -22,9 +20,13 @@ ambient_light_color = Color(1, 1, 1, 1)
 
 [node name="Node3D" type="Node3D"]
 
+[node name="Level" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.85419, -0.185226, 294.677)
+material_override = SubResource("StandardMaterial3D_mplag")
+mesh = ExtResource("9_3mk07")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1000, 0, 0, 0, 1, 0, 0, 0, 1000, 0, 0, 0)
-mesh = SubResource("BoxMesh_tn5oc")
+transform = Transform3D(419.555, 0, 0, 0, 1, 0, 0, 0, 1814.73, -160.947, 0, 727.742)
 
 [node name="Area3D" type="StaticBody3D" parent="MeshInstance3D"]
 
@@ -32,7 +34,7 @@ mesh = SubResource("BoxMesh_tn5oc")
 shape = SubResource("BoxShape3D_hq0al")
 
 [node name="Player" parent="." instance=ExtResource("1_7jcgb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38184, 0)
+transform = Transform3D(-0.392225, 0, 0.919869, 0, 1, 0, -0.919869, 0, -0.392225, -70.1407, 0.232139, -131.178)
 fuelUsage = 1.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
