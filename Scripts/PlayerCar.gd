@@ -14,15 +14,18 @@ var originalinertia
 var powerMulti := 1.0
 var scaleUpPickedUp := 0
 
+var winGame : bool
+
 #var max_rpm = 500
 #var max_torque = 200
 
+var winlose : win_lose
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	originalinertia = inertia
 	fuelComp = $FuelComponent
-	
+	winlose = $"../WinLose"
 
 func _physics_process(delta):
 	
@@ -34,7 +37,17 @@ func _physics_process(delta):
 	if engine_force:
 		fuelComp.Fuel(fuelUsage, false)
 	
-	engine_force = (drive * SPEED) * speedMult
+	
+	var velocity = linear_velocity.x + linear_velocity.y + linear_velocity.z
+	print(velocity)
+	if fuelComp.fuel <= 0 and velocity >= -1 and velocity <= 1  and !winGame:
+		!winGame
+		LoseGame()
+	
+	if !fuelComp.fuel <= 0: engine_force = (drive * SPEED) * speedMult
+	else:                   engine_force = 0
+	
+	
 	if Input.is_action_pressed("BOOST") and fuelComp.fuel > 0.0 and drive:
 		engine_force = engine_force * 1.5
 		fuelComp.Fuel(fuelUsage, false)
@@ -85,3 +98,7 @@ func SizeUp(sizeUpValue:float):
 	powerMulti += upsize
 	
 	print(powerMulti)
+
+func LoseGame():
+	winlose.Lose()
+	print("lost the game")

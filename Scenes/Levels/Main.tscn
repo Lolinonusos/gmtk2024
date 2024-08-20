@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://8o1kp53wj8ft"]
+[gd_scene load_steps=15 format=3 uid="uid://8o1kp53wj8ft"]
 
 [ext_resource type="PackedScene" uid="uid://byy4loel0kdj8" path="res://Scenes/PlayerCar.tscn" id="1_7jcgb"]
 [ext_resource type="Texture2D" uid="uid://dmft5vxd0yvf5" path="res://Textures/main2.png" id="1_d0ffc"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://eptgu770v3w7" path="res://Scenes/Power Ups/8Ball/EightBallPowerUp.tscn" id="6_4lbcx"]
 [ext_resource type="PackedScene" uid="uid://bh5jhbw3rgerh" path="res://Scenes/Power Ups/Size/SizePowerUp.tscn" id="7_us3iy"]
 [ext_resource type="PackedScene" uid="uid://do7rjlpoe2qfp" path="res://Scenes/LearnToFly2Obstacle.tscn" id="8_qsf81"]
+[ext_resource type="PackedScene" uid="uid://r2yd6gq1pow8" path="res://Scenes/winLose.tscn" id="11_3e1lf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5du5o"]
 transparency = 2
@@ -129,3 +130,5 @@ boost = 150.0
 
 [node name="FuelPowerUp5" parent="." instance=ExtResource("5_25qeo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09204, 3.11442, -334.797)
+
+[node name="WinLose" parent="." instance=ExtResource("11_3e1lf")]
