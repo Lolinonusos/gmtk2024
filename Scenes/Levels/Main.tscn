@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://byy4loel0kdj8" path="res://Scenes/PlayerCar.tscn" id="1_7jcgb"]
 [ext_resource type="Texture2D" uid="uid://dmft5vxd0yvf5" path="res://Textures/main2.png" id="1_d0ffc"]
-[ext_resource type="ArrayMesh" uid="uid://ldmdl282gya1" path="res://3d Models/Level2.obj" id="2_8juat"]
+[ext_resource type="ArrayMesh" uid="uid://c5ciytqljorts" path="res://3d Models/Level.obj" id="2_fnr8e"]
 [ext_resource type="Script" path="res://Scripts/CarCam.gd" id="2_nra01"]
 [ext_resource type="PackedScene" uid="uid://cm7m77nsis0vc" path="res://Scenes/UI.tscn" id="4_lw3e5"]
 [ext_resource type="PackedScene" uid="uid://t1k3xe0a0ccs" path="res://Scenes/Power Ups/Fuel/FuelPowerUp.tscn" id="5_25qeo"]
@@ -24,7 +24,7 @@ ambient_light_color = Color(1, 1, 1, 1)
 [node name="Level2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.52038, 42.8578, 287.965)
 material_override = SubResource("StandardMaterial3D_5du5o")
-mesh = ExtResource("2_8juat")
+mesh = ExtResource("2_fnr8e")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Level2"]
 
