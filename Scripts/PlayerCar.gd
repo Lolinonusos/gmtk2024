@@ -52,7 +52,7 @@ func _physics_process(delta):
 	
 	if boostTime > 0:
 		boostTime -= delta
-		rotation_degrees.x = clamp(rotation_degrees.x, -20,20)
+		rotation_degrees.x = clamp(rotation_degrees.x, -40,20)
 		rotation_degrees.y = clamp(rotation_degrees.y, -40,40)
 	else:
 		speedMult = 1
