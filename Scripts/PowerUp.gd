@@ -32,11 +32,11 @@ func _ready():
 	if boost >= 0:
 		label.set_text("+%d" %boost)
 	else:
-		label.set_text("-%d" %boost)
+		label.set_text("%d" %boost)
 	
 	var y : float = inverse_lerp(min_size, max_size, boost) + 1 * 2
 	
-	
+	y = clampf(y, 1, 2)
 	
 	#print(y)
 	
@@ -50,7 +50,7 @@ func _process(delta: float) -> void:
 	
 	## Up and down movement
 	bouncetime += delta
-	var bounce = sin(bouncetime * 5) * 0.05
+	var bounce = sin(bouncetime * 5) * 0.025
 	position.y += bounce
 	
 

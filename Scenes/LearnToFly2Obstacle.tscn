@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://do7rjlpoe2qfp"]
 
 [ext_resource type="Script" path="res://Scripts/Obstacle.gd" id="1_jvejl"]
-[ext_resource type="PackedScene" uid="uid://bjuhm8lyb50nq" path="res://Scenes/Power Ups/Fuel/capybara_collectible.tscn" id="2_g2nw5"]
+[ext_resource type="PackedScene" uid="uid://bjuhm8lyb50nq" path="res://3d Models/capybara_collectible.tscn" id="2_g2nw5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vidys"]
 size = Vector3(7.69382, 5.3623, 3.90479)

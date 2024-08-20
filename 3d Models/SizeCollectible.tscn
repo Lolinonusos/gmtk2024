@@ -1,26 +1,26 @@
 [gd_scene load_steps=10 format=3 uid="uid://c6wygagvbxghk"]
 
-[ext_resource type="Material" uid="uid://ghffsbrforcf" path="res://materials/mat_red.tres" id="1_hbhk2"]
-[ext_resource type="Material" uid="uid://baltlgxd6rgeg" path="res://materials/mat_blue.tres" id="2_ev8nq"]
-[ext_resource type="Material" uid="uid://8e7l61sp4xyd" path="res://materials/mat_green.tres" id="3_muuhu"]
+[ext_resource type="Material" uid="uid://ghffsbrforcf" path="res://materials/mat_red.tres" id="1_b0fnp"]
+[ext_resource type="Material" uid="uid://baltlgxd6rgeg" path="res://materials/mat_blue.tres" id="2_xdrm2"]
+[ext_resource type="Material" uid="uid://8e7l61sp4xyd" path="res://materials/mat_green.tres" id="3_l6q2n"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3jqub"]
-material = ExtResource("1_hbhk2")
+material = ExtResource("1_b0fnp")
 
 [sub_resource type="PrismMesh" id="PrismMesh_g4kj0"]
-material = ExtResource("1_hbhk2")
+material = ExtResource("1_b0fnp")
 
 [sub_resource type="BoxMesh" id="BoxMesh_mf3od"]
-material = ExtResource("2_ev8nq")
+material = ExtResource("2_xdrm2")
 
 [sub_resource type="PrismMesh" id="PrismMesh_orhyl"]
-material = ExtResource("2_ev8nq")
+material = ExtResource("2_xdrm2")
 
 [sub_resource type="BoxMesh" id="BoxMesh_hh1iy"]
-material = ExtResource("3_muuhu")
+material = ExtResource("3_l6q2n")
 
 [sub_resource type="PrismMesh" id="PrismMesh_jn3lo"]
-material = ExtResource("3_muuhu")
+material = ExtResource("3_l6q2n")
 
 [node name="SizeCollectible" type="Node3D"]
 
