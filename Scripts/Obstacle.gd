@@ -7,6 +7,8 @@ var player : PlayerCar = null
 ## Destroyed when 0
 @export var health : float = 100
 
+@export var isWinCondition := false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -21,6 +23,7 @@ func hit():
 	
 	if health <= 0:
 		ParticleManager.instantiate_particle("res://Scenes/VFX/Explosion.tscn", self.global_position)
+		if isWinCondition: $"../WinLose".Win()
 		queue_free()
 	print(health)
 

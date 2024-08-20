@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://r2yd6gq1pow8"]
+
+[ext_resource type="Script" path="res://Scenes/win_lose.gd" id="1_smobf"]
+
+[node name="WinLose" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_smobf")
+
+[node name="Win" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Win"]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 268.0
+offset_right = 626.0
+offset_bottom = 291.0
+text = "You Win!"
+
+[node name="Button" type="Button" parent="Win"]
+layout_mode = 0
+offset_left = 575.0
+offset_top = 347.0
+offset_right = 611.0
+offset_bottom = 378.0
+text = "OK!"
+
+[node name="Lose" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Lose"]
+layout_mode = 0
+offset_left = 555.0
+offset_top = 268.0
+offset_right = 629.0
+offset_bottom = 291.0
+text = "You Lose!"
+
+[node name="Button" type="Button" parent="Lose"]
+layout_mode = 0
+offset_left = 575.0
+offset_top = 347.0
+offset_right = 611.0
+offset_bottom = 378.0
+text = "OK!"
+
+[connection signal="pressed" from="Win/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Lose/Button" to="." method="_on_button_pressed"]
