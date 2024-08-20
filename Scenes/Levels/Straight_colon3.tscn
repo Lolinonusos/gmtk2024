@@ -149,6 +149,4 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 137.87
 
 [node name="EightBallPowerUp" parent="." instance=ExtResource("6_jccqn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.098, 2.72061, -0.428977)
-boost_time = 5
 boost = 100.0
-min_size = 50.0

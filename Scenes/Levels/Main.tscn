@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://8o1kp53wj8ft"]
+[gd_scene load_steps=15 format=3 uid="uid://8o1kp53wj8ft"]
 
 [ext_resource type="PackedScene" uid="uid://byy4loel0kdj8" path="res://Scenes/PlayerCar.tscn" id="1_7jcgb"]
 [ext_resource type="Texture2D" uid="uid://dmft5vxd0yvf5" path="res://Textures/main2.png" id="1_d0ffc"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://eptgu770v3w7" path="res://Scenes/Power Ups/8Ball/EightBallPowerUp.tscn" id="6_4lbcx"]
 [ext_resource type="PackedScene" uid="uid://bh5jhbw3rgerh" path="res://Scenes/Power Ups/Size/SizePowerUp.tscn" id="7_us3iy"]
 [ext_resource type="PackedScene" uid="uid://do7rjlpoe2qfp" path="res://Scenes/LearnToFly2Obstacle.tscn" id="8_qsf81"]
+[ext_resource type="PackedScene" uid="uid://r2yd6gq1pow8" path="res://Scenes/winLose.tscn" id="11_3e1lf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5du5o"]
 transparency = 2
@@ -26,7 +27,6 @@ ambient_light_color = Color(1, 1, 1, 1)
 [node name="Node3D" type="Node3D"]
 
 [node name="Level2" type="MeshInstance3D" parent="."]
-visible = false
 material_override = SubResource("StandardMaterial3D_5du5o")
 mesh = ExtResource("2_fnr8e")
 
@@ -41,7 +41,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_228ni")
 
 [node name="Player" parent="." instance=ExtResource("1_7jcgb")]
-transform = Transform3D(0.999544, 0, -0.0301894, 0, 1, 0, 0.0301894, 0, 0.999544, -13.5225, 43.8281, -90.4806)
+transform = Transform3D(0.999544, 0, -0.0301894, 0, 1, 0, 0.0301894, 0, 0.999544, -4.10384, 1.11047, -377.985)
 center_of_mass = Vector3(0, -1, 0)
 fuelUsage = 1.0
 
@@ -59,28 +59,76 @@ target_path = NodePath("../Player")
 [node name="Ui" parent="." instance=ExtResource("4_lw3e5")]
 
 [node name="FuelPowerUp" parent="." instance=ExtResource("5_25qeo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16334, 49.1568, 10.8623)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.25535, 5.20691, -276.642)
 
 [node name="FuelPowerUp2" parent="." instance=ExtResource("5_25qeo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.765593, 48.9001, 16.557)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0241, 4.43725, -259.687)
 
 [node name="FuelPowerUp3" parent="." instance=ExtResource("5_25qeo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32221, 49.0107, 14.6705)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.09648, 5.10909, -272.834)
 
 [node name="EightBallPowerUp" parent="." instance=ExtResource("6_4lbcx")]
-transform = Transform3D(0.776079, 0, 0.630635, 0, 1, 0, -0.630635, 0, 0.776079, -2.29577, 46.5456, -40.7239)
+transform = Transform3D(0.776079, 0, 0.630635, 0, 1, 0, -0.630635, 0, 0.776079, 7.12291, 3.90155, -328.228)
 boost = 100.0
 
+[node name="SizePowerUp12" parent="." instance=ExtResource("7_us3iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147.001, 7.39646, 307.818)
+boost = 100.0
+
+[node name="SizePowerUp11" parent="." instance=ExtResource("7_us3iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.6546, 13.0568, 189.933)
+
+[node name="SizePowerUp10" parent="." instance=ExtResource("7_us3iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -133.345, 8.00749, 257.314)
+
+[node name="SizePowerUp9" parent="." instance=ExtResource("7_us3iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.0773, 69.9252, 83.7056)
+
+[node name="SizePowerUp8" parent="." instance=ExtResource("7_us3iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.2029, 7.30292, 120.94)
+
+[node name="SizePowerUp7" parent="." instance=ExtResource("7_us3iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.518, 6.38161, 336.892)
+
+[node name="SizePowerUp6" parent="." instance=ExtResource("7_us3iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.095, 4.39641, 625.523)
+
+[node name="SizePowerUp5" parent="." instance=ExtResource("7_us3iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -119.702, 6.19372, 672.416)
+
+[node name="SizePowerUp4" parent="." instance=ExtResource("7_us3iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -130.787, 12.8033, 761.892)
+
+[node name="SizePowerUp14" parent="." instance=ExtResource("7_us3iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -119.134, 5.44998, 471.127)
+
+[node name="SizePowerUp3" parent="." instance=ExtResource("7_us3iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.232, 6.22802, 412.803)
+
+[node name="SizePowerUp13" parent="." instance=ExtResource("7_us3iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151.864, 5.92158, 349.792)
+
+[node name="SizePowerUp2" parent="." instance=ExtResource("7_us3iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.8618, 5.84031, 113.536)
+
 [node name="SizePowerUp" parent="." instance=ExtResource("7_us3iy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.452383, 49.7838, 8.28653)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8522, 5.2301, -279.218)
+boost = 2.0
+max_size = 2.0
 
 [node name="Obstacle" parent="." instance=ExtResource("8_qsf81")]
-transform = Transform3D(-4.16, 0, -6.28143e-07, 0, 4.16, 0, 6.28143e-07, 0, -4.16, -2.19927, 47.4877, 63.1612)
+transform = Transform3D(-4.16, 0, -6.28143e-07, 0, 4.16, 0, 6.28143e-07, 0, -4.16, 7.21942, 2.91481, -224.343)
+health = 10.0
+
+[node name="Obstacle2" parent="." instance=ExtResource("8_qsf81")]
+transform = Transform3D(-17.0316, 3.76709e-08, 3.06723, -0.398071, 17.1592, -2.2104, -3.04129, -2.24596, -16.8876, -158.814, 20.2994, 959.23)
 health = 10.0
 
 [node name="FuelPowerUp4" parent="." instance=ExtResource("5_25qeo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.99599, 46.889, -37.5625)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.422694, 3.46201, -325.067)
 boost = 150.0
 
 [node name="FuelPowerUp5" parent="." instance=ExtResource("5_25qeo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1593, 46.5414, -47.292)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09204, 3.11442, -334.797)
+
+[node name="WinLose" parent="." instance=ExtResource("11_3e1lf")]

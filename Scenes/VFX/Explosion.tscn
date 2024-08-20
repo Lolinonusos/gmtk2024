@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://dtb58nywml4fh"]
+[gd_scene load_steps=19 format=3 uid="uid://dtb58nywml4fh"]
 
-[ext_resource type="Texture2D" uid="uid://chktoj5i7mh1i" path="res://Textures/explosion1_0022.png" id="1_ul4dj"]
+[ext_resource type="Material" uid="uid://doc2x5jdrnlql" path="res://Scenes/VFX/ExplosionMat.tres" id="1_2rm80"]
 
 [sub_resource type="Curve" id="Curve_fgfv2"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.514991, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -25,19 +25,42 @@ angle_max = 360.0
 scale_curve = SubResource("CurveTexture_bavhr")
 alpha_curve = SubResource("CurveTexture_162ip")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_je4dp"]
-transparency = 1
-shading_mode = 0
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("1_ul4dj")
-billboard_mode = 3
-billboard_keep_scale = true
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
 [sub_resource type="QuadMesh" id="QuadMesh_t36ub"]
-material = SubResource("StandardMaterial3D_je4dp")
+material = ExtResource("1_2rm80")
+
+[sub_resource type="Curve" id="Curve_1mny7"]
+_data = [Vector2(0, 0.472498), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveTexture" id="CurveTexture_qgqjq"]
+curve = SubResource("Curve_1mny7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_drxv0"]
+angle_min = 1.07288e-05
+angle_max = 360.0
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_max = 43.48
+alpha_curve = SubResource("CurveTexture_qgqjq")
+sub_emitter_mode = 1
+sub_emitter_frequency = 59.22
+
+[sub_resource type="QuadMesh" id="QuadMesh_ylfs6"]
+material = ExtResource("1_2rm80")
+
+[sub_resource type="Curve" id="Curve_vfdd8"]
+_data = [Vector2(0, 0.361136), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveTexture" id="CurveTexture_rfst3"]
+curve = SubResource("Curve_vfdd8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ow00s"]
+scale_min = 0.0
+alpha_curve = SubResource("CurveTexture_rfst3")
+
+[sub_resource type="QuadMesh" id="QuadMesh_h5w1l"]
+material = ExtResource("1_2rm80")
 
 [sub_resource type="Animation" id="Animation_us1ti"]
 length = 0.001
@@ -51,7 +74,19 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sparks:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_x7sjt"]
@@ -91,12 +126,26 @@ _data = {
 }
 
 [node name="Explosion" type="GPUParticles3D"]
-emitting = false
 amount = 1
 one_shot = true
 collision_base_size = 70.35
 process_material = SubResource("ParticleProcessMaterial_u17tm")
 draw_pass_1 = SubResource("QuadMesh_t36ub")
+
+[node name="Sparks" type="GPUParticles3D" parent="."]
+amount = 20
+sub_emitter = NodePath("../Trail")
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_drxv0")
+draw_pass_1 = SubResource("QuadMesh_ylfs6")
+
+[node name="Trail" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 388
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_ow00s")
+draw_pass_1 = SubResource("QuadMesh_h5w1l")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
